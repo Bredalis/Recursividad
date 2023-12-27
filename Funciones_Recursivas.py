@@ -1,8 +1,7 @@
-
 """
 Funciones Recursivas: son funciones 
 que se llaman a sí mismas para resolver 
-un problema dividiéndolo en instancias más 
+un problema dividiéndolo en instancias más
 pequeñas del mismo problema.
 
 Funciones Iterativas: son funciones que 
@@ -16,34 +15,32 @@ más simples que, al multiplicarse juntos,
 producen el valor original.
 """
 
-# Libreria
-
 from time import perf_counter
 
 # Funciones Recursivas
 
-def Recursiva(numero):
-	print("Recursiva:\n")
+def recursiva(numero):
+	print('Recursiva:\n')
 
 	if numero == 0:
 		print(numero)
 
 	else:
 		print(numero)
-		Recursiva(numero - 1)
+		recursiva(numero - 1)
 
-def Factorizacion_Recursiva(numero):
-	print("\nFactorizacion Recursiva: \n")
+def factorizacion_recursiva(numero):
+	print('\nFactorizacion recursiva: \n')
 
 	if numero == 0 or numero == 1:
 		return 1
 
-	return numero*Factorizacion_Recursiva(numero - 1)
+	return numero * factorizacion_recursiva(numero - 1)
 
 # Funcion Iterativa
 
-def Factorizacion_Iteractiva(numero):
-	print("\nFactorizacion Iteractiva: \n")
+def factorizacion_iteractiva(numero):
+	print('\nFactorizacion Iteractiva: \n')
 
 	if numero == 0 or numero == 1:
 		print(1)
@@ -58,11 +55,11 @@ def Factorizacion_Iteractiva(numero):
 inicio = perf_counter()
 
 for i in range(10):
-	print(i, Factorizacion_Iteractiva(i), Factorizacion_Recursiva(i))
+	print(i, factorizacion_iteractiva(i), factorizacion_recursiva(i))
 
 for i in range(10):
-	Recursiva(i)
+	recursiva(i)
 
 final = perf_counter()
 
-print("Tiempo:", "%0.4f" % (final - inicio))
+print('Tiempo:', '%0.4f' % (final - inicio))

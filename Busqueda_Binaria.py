@@ -4,7 +4,7 @@
 
 lista = [11, 12, 13, 14, 15, 16, 17]
 
-def Busqueda_Iterativa(lista, dato):
+def busqueda_iterativa(lista, dato):
 
 	bajo = 0
 	alto = len(lista) - 1
@@ -27,7 +27,7 @@ def Busqueda_Iterativa(lista, dato):
 
 # Manera Recursiva
 
-def Busqueda_Recursiva(lista, bajo, alto, dato):
+def busqueda_recursiva(lista, bajo, alto, dato):
 
 	if bajo > alto:
 		return -1
@@ -38,12 +38,12 @@ def Busqueda_Recursiva(lista, bajo, alto, dato):
 		return centro
 
 	elif lista[centro] < dato:
-		return Busqueda_Recursiva(lista, centro + 1, alto, dato)
+		return busqueda_recursiva(lista, centro + 1, alto, dato)
 
 	else:
-		return Busqueda_Recursiva(lista, bajo, centro - 1, dato)
+		return busqueda_recursiva(lista, bajo, centro - 1, dato)
 
 for i in range(10, 19):
 
-	print(f"Iterativa: {i} _ {Busqueda_Iterativa(lista, i)}")
-	print(f"Recursiva: {i} _ {Busqueda_Recursiva(lista, 0, len(lista) - 1, i)}")
+	print(f'Iterativa: {i} _ {busqueda_iterativa(lista, i)}')
+	print(f'Recursiva: {i} _ {busqueda_recursiva(lista, 0, len(lista) - 1, i)}')
